@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BlogWebsiteDbModelStoreContainer" CdmEntityContainer="BlogWebsiteDbEntities">
+    <EntitySetMapping Name="BlogTables">
+      <EntityTypeMapping TypeName="BlogWebsiteDbModel.BlogTable">
+        <MappingFragment StoreEntitySet="BlogTable">
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="BTitle" ColumnName="BTitle" />
+          <ScalarProperty Name="BCategory" ColumnName="BCategory" />
+          <ScalarProperty Name="BDesc" ColumnName="BDesc" />
+          <ScalarProperty Name="BUrl" ColumnName="BUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationTables">
+      <EntityTypeMapping TypeName="BlogWebsiteDbModel.RegistrationTable">
+        <MappingFragment StoreEntitySet="RegistrationTable">
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+          <ScalarProperty Name="Uname" ColumnName="Uname" />
+          <ScalarProperty Name="Uemail" ColumnName="Uemail" />
+          <ScalarProperty Name="Upass" ColumnName="Upass" />
+          <ScalarProperty Name="Ugender" ColumnName="Ugender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RegistrationDbModelStoreContainer" CdmEntityContainer="RegistrationDbEntities">
+    <EntitySetMapping Name="RegistrationTables">
+      <EntityTypeMapping TypeName="RegistrationDbModel.RegistrationTable">
+        <MappingFragment StoreEntitySet="RegistrationTable">
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+          <ScalarProperty Name="Uname" ColumnName="Uname" />
+          <ScalarProperty Name="Uemail" ColumnName="Uemail" />
+          <ScalarProperty Name="Upass" ColumnName="Upass" />
+          <ScalarProperty Name="Ugender" ColumnName="Ugender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

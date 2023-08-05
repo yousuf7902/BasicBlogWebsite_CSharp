@@ -1,0 +1,20 @@
+﻿@model IEnumerable<BlogProjectC_.BlogTable>
+
+@{
+    ViewBag.Title = "Code";
+}
+
+<h2>Learn Your Code - Code Articles</h2>
+<hr />
+
+
+@foreach (var item in Model)
+{
+    <div class="card w-100 mt-4 mb-4">
+        <div class="card-body">
+            <b class="card-title" style="color:saddlebrown;font-size:x-large">@Html.DisplayFor(modelItem => item.BTitle)</b>
+            <p class="card-text" style="font-size: large">@Html.DisplayFor(modelItem => item.BDesc)</p>
+            Category: <a href="~/Blog/@item.BCategory" class="btn btn-dark btn-sm">@Html.DisplayFor(modelItem => item.BCategory)</a>
+        </div>
+    </div>
+}

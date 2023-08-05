@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Your Code</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Learn Your Code", "Index", "Blog", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Blog", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Code", "Code", "Blog", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("DataStructure", "DataStructure", "Blog", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Algorithm", "Algorithm", "Blog", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Registration", "Registration", "Blog", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Login", "Login", "Blog", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-8 m-4 p-4">@RenderBody()</div>
+            <div class="col-3 m-4 p-4"><h2>Category</h2><hr/>
+                 <ul class="list-group">
+                       <li class="list-group-item d-flex justify-content-between align-items-center"> Code
+                           <span class="badge bg-primary rounded-pill" id="codeId">
+                               @{
+                                   BlogDbEntities bd1 = new BlogDbEntities();
+
+                                   var count1 = bd1.BlogTables.Count(x => x.BCategory == "Code");
+                                   ViewBag.CodeId = count1;
+                               }
+                               @ViewBag.CodeId
+                           </span>
+</li>
+                       <li class="list-group-item d-flex justify-content-between align-items-center"> Data Structure
+                           <span class="badge bg-primary rounded-pill" id="dataId">
+                               @{
+                                   BlogDbEntities bd2 = new BlogDbEntities();
+
+                                   var count2 = bd2.BlogTables.Count(x => x.BCategory == "DataStructure");
+                                   ViewBag.DataId = count2;
+                               }
+                               @ViewBag.DataId
+                           </span>
+                       </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"> Algorithm
+                            <span class="badge bg-primary rounded-pill" id="algoId">
+                                @{
+                                    BlogDbEntities bd3 = new BlogDbEntities();
+
+                                    var count3 = bd3.BlogTables.Count(x => x.BCategory == "Algorithm");
+                                    ViewBag.AlgoId = count3;
+                                }
+                                @ViewBag.AlgoId
+                            </span>
+                        </li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Learn Your Code Website</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

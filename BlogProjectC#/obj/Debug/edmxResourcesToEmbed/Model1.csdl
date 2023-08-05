@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogWebsiteDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BlogTable">
+    <Key>
+      <PropertyRef Name="BId" />
+    </Key>
+    <Property Name="BId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BCategory" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BDesc" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RegistrationTable">
+    <Key>
+      <PropertyRef Name="Uid" />
+    </Key>
+    <Property Name="Uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Uemail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Upass" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ugender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BlogWebsiteDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlogTables" EntityType="Self.BlogTable" />
+    <EntitySet Name="RegistrationTables" EntityType="Self.RegistrationTable" />
+  </EntityContainer>
+</Schema>

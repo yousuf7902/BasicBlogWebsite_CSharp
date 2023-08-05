@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BlogTable">
+    <Key>
+      <PropertyRef Name="BId" />
+    </Key>
+    <Property Name="BId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BCategory" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BDesc" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BlogDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlogTables" EntityType="Self.BlogTable" />
+  </EntityContainer>
+</Schema>
